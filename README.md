@@ -3,7 +3,7 @@
 
 [NGA帖子连结](https://ngabbs.com/read.php?tid=17767319)
 
-[原版源码GitHub连结](https://github.com/lhc-clover/iKanColleCommand)
+[原版源码GitHub连结](https://github.com/lhc-clover/iKanColleCommand) 这里的源码已经fork回原版源码了
 
 ~~本修改版使没有使用VPN游玩舰队收藏及使用繁体中文的玩家也可以使用这个App。~~
 
