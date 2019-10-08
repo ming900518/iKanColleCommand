@@ -105,7 +105,7 @@ class FleetVC: UIViewController {
             }
             let airPower = Fleet.instance.getFleetAirPower(index: index)
             let scout = floor(Fleet.instance.getFleetScout(index: index) * 100) / 100
-            hintText = "Lv. \(level) / \(speed) / 制空：\(airPower[0])-\(airPower[1]) / 索敵：\(scout)"
+            hintText = "Lv. \(level) / \(speed) / 制空：\(airPower[0])-\(airPower[1]) / 索敌：\(scout)"
         } else {
             hintText = ""
         }

@@ -45,7 +45,7 @@ func getMissionData(byId: Int) -> MissionData? {
 
             /** ==========出击类========== */
     case 201:
-        data = MissionData(description: "獲得勝利一次", require: 1, type: MissionRequireType.BATTLE,
+        data = MissionData(description: "获得胜利一次", require: 1, type: MissionRequireType.BATTLE,
                 processor: {
                     bean in
                     var count = 0
@@ -58,21 +58,21 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 216:
-        data = MissionData(description: "進行戰鬥1次", require: 1, type: MissionRequireType.BATTLE,
+        data = MissionData(description: "进行战斗1次", require: 1, type: MissionRequireType.BATTLE,
                 processor: {
                     bean in
                     return 1
                 })
         break
     case 210:
-        data = MissionData(description: "進行戰鬥10次", require: 10, type: MissionRequireType.BATTLE,
+        data = MissionData(description: "进行战斗10次", require: 10, type: MissionRequireType.BATTLE,
                 processor: {
                     bean in
                     return 1
                 })
         break
     case 218:
-        data = MissionData(description: "擊沉補給艦3艘", require: 3, type: MissionRequireType.BATTLE,
+        data = MissionData(description: "击沉补给舰3艘", require: 3, type: MissionRequireType.BATTLE,
                 processor: {
                     bean in
                     var count = 0
@@ -86,7 +86,7 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 226:
-        data = MissionData(description: "2-1～2-5 BOSS點獲得勝利5次", require: 5, type: MissionRequireType.BATTLE,
+        data = MissionData(description: "2-1～2-5 BOSS点获得胜利5次", require: 5, type: MissionRequireType.BATTLE,
                 processor: {
                     bean in
                     var count = 0
@@ -101,7 +101,7 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 230:
-        data = MissionData(description: "擊沉潛水艇6艘", require: 6, type: MissionRequireType.BATTLE,
+        data = MissionData(description: "击沉潜水艇6艘", require: 6, type: MissionRequireType.BATTLE,
                 processor: {
                     bean in
                     var count = 0
@@ -117,14 +117,14 @@ func getMissionData(byId: Int) -> MissionData? {
 
             /** ==========演习类========== */
     case 303:
-        data = MissionData(description: "進行演習3次", require: 3, type: MissionRequireType.PRACTICE,
+        data = MissionData(description: "进行演习3次", require: 3, type: MissionRequireType.PRACTICE,
                 processor: {
                     bean in
                     return 1
                 })
         break
     case 304:
-        data = MissionData(description: "演習勝利5次", require: 5, type: MissionRequireType.PRACTICE,
+        data = MissionData(description: "演习胜利5次", require: 5, type: MissionRequireType.PRACTICE,
                 processor: {
                     bean in
                     var count = 0
@@ -139,7 +139,7 @@ func getMissionData(byId: Int) -> MissionData? {
 
             /** ==========远征类========== */
     case 402:
-        data = MissionData(description: "遠征成功3次", require: 3, type: MissionRequireType.EXPEDITION,
+        data = MissionData(description: "远征成功3次", require: 3, type: MissionRequireType.EXPEDITION,
                 processor: {
                     bean in
                     var count = 0
@@ -152,7 +152,7 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 403:
-        data = MissionData(description: "遠征成功10次", require: 10, type: MissionRequireType.EXPEDITION,
+        data = MissionData(description: "远征成功10次", require: 10, type: MissionRequireType.EXPEDITION,
                 processor: {
                     bean in
                     var count = 0
@@ -174,7 +174,7 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 504:
-        data = MissionData(description: "補給15次", require: 15, type: MissionRequireType.SUPPLY,
+        data = MissionData(description: "补给15次", require: 15, type: MissionRequireType.SUPPLY,
                 processor: {
                     bean in
                     return 1
@@ -183,7 +183,7 @@ func getMissionData(byId: Int) -> MissionData? {
 
             /** ==========工厂类========== */
     case 605:
-        data = MissionData(description: "開發1次", require: 1, type: MissionRequireType.CREATE_ITEM,
+        data = MissionData(description: "开发1次", require: 1, type: MissionRequireType.CREATE_ITEM,
                 processor: {
                     bean in
                     return 1
@@ -197,7 +197,7 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 607:
-        data = MissionData(description: "開發3次", require: 3, type: MissionRequireType.CREATE_ITEM,
+        data = MissionData(description: "开发3次", require: 3, type: MissionRequireType.CREATE_ITEM,
                 processor: {
                     bean in
                     return 1
@@ -211,7 +211,7 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 609:
-        data = MissionData(description: "解體2次", require: 2, type: MissionRequireType.DESTROY_SHIP,
+        data = MissionData(description: "解体2次", require: 2, type: MissionRequireType.DESTROY_SHIP,
                 processor: {
                     bean in
                     return 1
@@ -225,7 +225,7 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 673:
-        data = MissionData(description: "廢棄小口徑主砲4根", require: 4, type: MissionRequireType.DESTROY_ITEM,
+        data = MissionData(description: "废弃小口径主炮4根", require: 4, type: MissionRequireType.DESTROY_ITEM,
                 processor: {
                     bean in
                     var count = 0
@@ -243,7 +243,7 @@ func getMissionData(byId: Int) -> MissionData? {
                 })
         break
     case 674:
-        data = MissionData(description: "廢棄機槍3根", require: 3, type: MissionRequireType.DESTROY_ITEM,
+        data = MissionData(description: "废弃机枪3根", require: 3, type: MissionRequireType.DESTROY_ITEM,
                 processor: {
                     bean in
                     var count = 0

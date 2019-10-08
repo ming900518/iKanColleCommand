@@ -14,7 +14,7 @@ protocol GripDelegate {
 class GripView: UIView {
 
     private var delegate: GripDelegate? = nil
-    private let titles = Array(arrayLiteral: "艦\n隊", "戰\n鬥", "任\n務")
+    private let titles = Array(arrayLiteral: "舰\n队", "战\n斗", "任\n务")
 
     public func gripTo(view: UIView) {
         backgroundColor = UIColor(white: 0.144, alpha: 1)

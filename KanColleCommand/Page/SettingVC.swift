@@ -34,7 +34,7 @@ class SettingVC: UIViewController {
         }
 
         let titleText = UILabel()
-        titleText.text = "便攜式艦隊司令部-繁體版設定"
+        titleText.text = "便携式舰队司令部-简体版设定"
         titleText.textColor = UIColor.black
         titleBar.addSubview(titleText)
         titleText.snp.makeConstraints { maker in
@@ -57,7 +57,7 @@ class SettingVC: UIViewController {
         }
 
         let closeBtn = UIButton(type: .system)
-        closeBtn.setTitle("關閉", for: .normal)
+        closeBtn.setTitle("关闭", for: .normal)
         closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         titleBar.addSubview(closeBtn)
         closeBtn.snp.makeConstraints { maker in
@@ -101,7 +101,7 @@ extension SettingVC: UITableViewDelegate {
                 picker.dataSource = self
                 picker.delegate = self
                 picker.selectRow(Setting.getRetryCount(), inComponent: 0, animated: false)
-                selector.addAction(UIAlertAction(title: "確定", style: .default) { action in
+                selector.addAction(UIAlertAction(title: "确定", style: .default) { action in
                     let selected = picker.selectedRow(inComponent: 0)
                     print("Selected : \(selected)")
                     Setting.saveRetryCount(value: selected)
@@ -110,9 +110,9 @@ extension SettingVC: UITableViewDelegate {
                 selector.addAction(UIAlertAction(title: "取消", style: .cancel))
                 self.present(selector, animated: true)
             } else if (indexPath.row == 1) {
-                let dialog = UIAlertController(title: nil, message: "使用後遊戲會被登出", preferredStyle: .alert)
+                let dialog = UIAlertController(title: nil, message: "使用后游戏会被登出", preferredStyle: .alert)
                 dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-                dialog.addAction(UIAlertAction(title: "執行", style: .default) { action in
+                dialog.addAction(UIAlertAction(title: "执行", style: .default) { action in
                     if let cookies = HTTPCookieStorage.shared.cookies {
                         for cookie in cookies {
                             HTTPCookieStorage.shared.deleteCookie(cookie)
@@ -125,9 +125,9 @@ extension SettingVC: UITableViewDelegate {
             }
         } else if (indexPath.section == 2) {
             if (indexPath.row == 1) {
-                let dialog = UIAlertController(title: "請選擇渠道", message: nil, preferredStyle: .alert)
+                let dialog = UIAlertController(title: "请选择渠道", message: nil, preferredStyle: .alert)
                 dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-                dialog.addAction(UIAlertAction(title: "支付寶", style: .default) { action in
+                dialog.addAction(UIAlertAction(title: "支付宝", style: .default) { action in
                     if let url = URL(string: "https://qr.alipay.com/tsx04467wmwmuqfxcmwmt7e") {
                         UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                     }
@@ -138,7 +138,7 @@ extension SettingVC: UITableViewDelegate {
                         case .authorized:
                             if let codeImage = UIImage(named: "wechat_qrcode.png") {
                                 UIImageWriteToSavedPhotosAlbum(codeImage, nil, nil, nil)
-                                let dialog = UIAlertController(title: nil, message: "QR Code已保存在相簿中。請到微信[右上角加號]→[掃一掃]→[相簿]選擇QR Code完成捐贈", preferredStyle: .alert)
+                                let dialog = UIAlertController(title: nil, message: "二维码已保存到相册。请至微信[右上角加号]→[扫一扫]→[相册]选择二维码完成捐赠", preferredStyle: .alert)
                                 dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
                                 dialog.addAction(UIAlertAction(title: "去微信", style: .default) { action in
                                     if let url = URL(string: "weixin://") {
@@ -149,9 +149,9 @@ extension SettingVC: UITableViewDelegate {
                             }
                             break
                         default:
-                            let dialog = UIAlertController(title: nil, message: "這個功能需要相簿存取權限，請授與", preferredStyle: .alert)
+                            let dialog = UIAlertController(title: nil, message: "App需要相册权限，请授予", preferredStyle: .alert)
                             dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-                            dialog.addAction(UIAlertAction(title: "去設定", style: .default) { action in
+                            dialog.addAction(UIAlertAction(title: "去设置", style: .default) { action in
                                 if let url = URL(string: UIApplication.openSettingsURLString) {
                                     UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                                 }
@@ -188,15 +188,15 @@ extension SettingVC: UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDa
             if (indexPath.row == 0) {
                 let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
                 cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "連接重試次數 (0為不重試)"
+                cell.textLabel?.text = "连接重试次数 (0为不重试)"
                 cell.detailTextLabel?.text = "\(Setting.getRetryCount())"
                 cell.accessoryType = .disclosureIndicator
                 return cell
             } else if (indexPath.row == 1) {
                 let cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
                 cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "清理Cookies"
-                cell.detailTextLabel?.text = "當遊戲出現問題時可以嘗試看看"
+                cell.textLabel?.text = "清除Cookie"
+                cell.detailTextLabel?.text = "当游戏出现问题时可以尝试看看"
                 cell.accessoryType = .disclosureIndicator
                 return cell
             }
@@ -204,7 +204,7 @@ extension SettingVC: UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDa
             if (indexPath.row == 0) {
                 let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
                 cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "當前版本"
+                cell.textLabel?.text = "当前版本"
                 if let versionCode = Bundle.main.infoDictionary?["CFBundleShortVersionString"] {
                     cell.detailTextLabel?.text = "\(versionCode)"
                 }
@@ -213,22 +213,22 @@ extension SettingVC: UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDa
                 let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
                 cell.backgroundColor = UIColor.white
                 cell.textLabel?.text = "程式功能"
-                cell.detailTextLabel?.text = "基本遊戲、輔助程式、大破警告、Cookies修改"
+                cell.detailTextLabel?.text = "基本游戏、辅助程式、大破警告"
                 return cell
             }
         } else if (indexPath.section == 2) {
             if (indexPath.row == 0) {
                 let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
                 cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "提示：第一次遊玩遊戲時，會在背景下載緩存檔"
-                cell.detailTextLabel?.text = "重啟App就會使用緩存，讓遊戲更順暢喔"
+                cell.textLabel?.text = "提示：第一次游玩游戏时，会在背景下载缓存"
+                cell.detailTextLabel?.text = "重启App就会使用缓存，让游戏更顺畅"
                 cell.detailTextLabel?.textColor = UIColor.lightGray
                 return cell
             } else if (indexPath.row == 1) {
                 let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
                 cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "捐贈原作者（非修改版作者）"
-                cell.detailTextLabel?.text = "支持原本的大佬吧～我就不用了，大家玩得開心最重要"
+                cell.textLabel?.text = "捐赠原作者（非修改版作者）"
+                cell.detailTextLabel?.text = "支持原本的大佬吧～我就不用了，大家玩得开心最重要"
                 cell.detailTextLabel?.textColor = UIColor.lightGray
                 cell.accessoryType = .disclosureIndicator
                 return cell

@@ -182,7 +182,7 @@ class BattleVC: UIViewController {
         case Phase.Start:
             nodeText.text = "\(Battle.instance.area)-\(Battle.instance.map)"
             let spot = MapSpotHelper.instance.getSpotMarker(area: Battle.instance.area, map: Battle.instance.map, route: Battle.instance.route)
-            nextText.text = "羅盤: \(spot?[safe: 1] ?? "")"
+            nextText.text = "罗盘: \(spot?[safe: 1] ?? "")"
             headingText.text = ""
             airCommandText.text = ""
             resultText.text = ""
@@ -191,7 +191,7 @@ class BattleVC: UIViewController {
         case Phase.Next:
             nodeText.text = "\(Battle.instance.area)-\(Battle.instance.map)"
             let spot = MapSpotHelper.instance.getSpotMarker(area: Battle.instance.area, map: Battle.instance.map, route: Battle.instance.route)
-            nextText.text = "羅盤: \(spot?[safe: 1] ?? "")"
+            nextText.text = "罗盘: \(spot?[safe: 1] ?? "")"
             headingText.text = ""
             airCommandText.text = ""
             resultText.text = ""
@@ -216,10 +216,10 @@ class BattleVC: UIViewController {
             headingText.text = buildHeadingStr(heading: Battle.instance.heading)
             airCommandText.text = buildAirCommandStr(air: Battle.instance.airCommand)
             resultText.text = Battle.instance.rank
-            getText.text = "撈: \(Battle.instance.get)"
+            getText.text = "捞: \(Battle.instance.get)"
             break
         default:
-            nodeText.text = "未出擊"
+            nodeText.text = "未出击"
             nextText.text = ""
             headingText.text = ""
             airCommandText.text = ""
