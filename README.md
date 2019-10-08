@@ -6,6 +6,7 @@
 [原版源码GitHub连结](https://github.com/lhc-clover/iKanColleCommand)
 
 ~~本修改版使没有使用VPN游玩舰队收藏及使用繁体中文的玩家也可以使用这个App。~~
+
 本修改版除了原有的修正之外，對大陸地區無法使用的功能進行移除，且還原了簡體中文，讓大陸地區用戶能更為方便的使用本修改版App。
 
 修改项目请至[这里](https://forum.gamer.com.tw/C.php?bsn=24698&snA=20053&tnum=5&bPage=2)查看
