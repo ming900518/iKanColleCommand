@@ -3,4 +3,6 @@
 
 已将语言改回简体中文，给中国大陆地区用户使用。
 
+[点此下载最新正式版](https://github.com/ming900518/iKanColleCommand/releases/tag/R2)
+
 ### 台灣或港澳地區用戶請使用[這裏](https://github.com/ming900518/KC2CHT)的版本，謝謝！
