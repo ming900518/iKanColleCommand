@@ -132,35 +132,35 @@ extension SettingVC: UITableViewDelegate {
                         UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                     }
                 })
-                dialog.addAction(UIAlertAction(title: "微信", style: .default) { action in
-                    PHPhotoLibrary.requestAuthorization { status in
-                        switch (status) {
-                        case .authorized:
-                            if let codeImage = UIImage(named: "wechat_qrcode.png") {
-                                UIImageWriteToSavedPhotosAlbum(codeImage, nil, nil, nil)
-                                let dialog = UIAlertController(title: nil, message: "二维码已保存到相册。请至微信[右上角加号]→[扫一扫]→[相册]选择二维码完成捐赠", preferredStyle: .alert)
-                                dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-                                dialog.addAction(UIAlertAction(title: "去微信", style: .default) { action in
-                                    if let url = URL(string: "weixin://") {
-                                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                                    }
-                                })
-                                self.present(dialog, animated: true)
-                            }
-                            break
-                        default:
-                            let dialog = UIAlertController(title: nil, message: "App需要相册权限，请授予", preferredStyle: .alert)
-                            dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-                            dialog.addAction(UIAlertAction(title: "去设置", style: .default) { action in
-                                if let url = URL(string: UIApplication.openSettingsURLString) {
-                                    UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                                }
-                            })
-                            self.present(dialog, animated: true)
-                            break
-                        }
-                    }
-                })
+//                dialog.addAction(UIAlertAction(title: "微信", style: .default) { action in
+//                    PHPhotoLibrary.requestAuthorization { status in
+//                        switch (status) {
+//                        case .authorized:
+//                            if let codeImage = UIImage(named: "wechat_qrcode.png") {
+//                                UIImageWriteToSavedPhotosAlbum(codeImage, nil, nil, nil)
+//                                let dialog = UIAlertController(title: nil, message: "二维码已保存到相册。请至微信[右上角加号]→[扫一扫]→[相册]选择二维码完成捐赠", preferredStyle: .alert)
+//                                dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+//                                dialog.addAction(UIAlertAction(title: "去微信", style: .default) { action in
+//                                    if let url = URL(string: "weixin://") {
+//                                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+//                                    }
+//                                })
+//                                self.present(dialog, animated: true)
+//                            }
+//                            break
+//                        default:
+//                            let dialog = UIAlertController(title: nil, message: "App需要相册权限，请授予", preferredStyle: .alert)
+//                            dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+//                            dialog.addAction(UIAlertAction(title: "去设置", style: .default) { action in
+//                                if let url = URL(string: UIApplication.openSettingsURLString) {
+//                                    UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+//                                }
+//                            })
+//                            self.present(dialog, animated: true)
+//                            break
+//                        }
+//                    }
+//                })
                 self.present(dialog, animated: true)
             }
         }
