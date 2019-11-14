@@ -5,9 +5,12 @@ import RxSwift
 
 class ViewController: UIViewController, UIScrollViewDelegate {
 
-    static let DEFAULT_BACKGROUND = UIColor(hexString: "#303030")
+    static let DEFAULT_BACKGROUND = UIColor(white: 0.23, alpha: 1)//UIColor(hexString: "#303030")
     private var webView: KCWebView!
     private var scrollView: UIScrollView!
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -15,7 +18,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         appDelegate.landscape = true
         UIApplication.shared.isIdleTimerDisabled = true
         //UIDevice.current.setValue(NSNumber(value: UIInterfaceOrientation.landscapeRight.rawValue), forKey: "orientation")
-        self.view.backgroundColor = UIColor.black
+        self.view.backgroundColor = UIColor.init(white: 0.185, alpha: 1)
 
         webView = KCWebView()
         webView.setup(parent: self.view)
@@ -60,20 +63,50 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let settingBtn = UIButton(type: .custom)
         settingBtn.setImage(UIImage(named: "setting.png"), for: .normal)
         settingBtn.imageEdgeInsets = UIEdgeInsets.init(top: 8, left: 8, bottom: 8, right: 8)
-        settingBtn.backgroundColor = ViewController.DEFAULT_BACKGROUND
+        settingBtn.backgroundColor = UIColor.init(white: 0.185, alpha: 1)//ViewController.DEFAULT_BACKGROUND
         self.view.addSubview(settingBtn)
-        settingBtn.snp.makeConstraints { maker in
-            maker.width.equalTo(40)
-            maker.height.equalTo(40)
-            maker.right.equalTo(webView.snp.left)
-            maker.top.equalTo(webView.snp.top)
+        if (UIScreen.current == .iPhone5_8) { //iPhone X XS 11Pro
+            settingBtn.snp.makeConstraints { maker in
+                maker.width.equalTo(40)
+                maker.height.equalTo(40)
+                maker.right.equalTo(webView.snp.left)
+                maker.top.equalTo(webView.snp.top).inset(11)
+            }
+        } else if (UIScreen.current == .iPhone6_1) { //iPhone XR 11
+            settingBtn.snp.makeConstraints { maker in
+                maker.width.equalTo(40)
+                maker.height.equalTo(40)
+                maker.right.equalTo(webView.snp.left)
+                maker.top.equalTo(webView.snp.top).inset(11)
+            }
+        } else if (UIScreen.current == .iPhone6_5) { //iPhone XS Max 11Pro Max
+            settingBtn.snp.makeConstraints { maker in
+                maker.width.equalTo(40)
+                maker.height.equalTo(40)
+                maker.right.equalTo(webView.snp.left)
+                maker.top.equalTo(webView.snp.top).inset(11)
+            }
+        } else if (UIScreen.current > .iPad10_5) { //iPad Pro
+            settingBtn.snp.makeConstraints { maker in
+                maker.width.equalTo(40)
+                maker.height.equalTo(40)
+                maker.right.equalTo(webView.snp.left)
+                maker.top.equalTo(webView.snp.top).inset(11)
+            }
+        } else {
+            settingBtn.snp.makeConstraints { maker in
+                maker.width.equalTo(40)
+                maker.height.equalTo(40)
+                maker.right.equalTo(webView.snp.left)
+                maker.top.equalTo(webView.snp.top)
+            }
         }
         settingBtn.addTarget(self, action: #selector(openSetting), for: .touchUpInside)
 
         let refreshBtn = UIButton(type: .custom)
         refreshBtn.setImage(UIImage(named: "reload.png"), for: .normal)
         refreshBtn.imageEdgeInsets = UIEdgeInsets.init(top: 8, left: 8, bottom: 8, right: 8)
-        refreshBtn.backgroundColor = ViewController.DEFAULT_BACKGROUND
+        refreshBtn.backgroundColor = UIColor.init(white: 0.185, alpha: 1)//ViewController.DEFAULT_BACKGROUND
         self.view.addSubview(refreshBtn)
         refreshBtn.snp.makeConstraints { maker in
             maker.width.equalTo(40)
@@ -88,7 +121,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
 
     @objc func confirmRefresh() {
-        let dialog = UIAlertController(title: nil, message: "返回选择游玩方式介面", preferredStyle: .alert)
+        let dialog = UIAlertController(title: nil, message: "前往登入方式切换器", preferredStyle: .alert)
         dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         dialog.addAction(UIAlertAction(title: "确定", style: .default) { action in
             self.reloadGame()
@@ -99,14 +132,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @objc func openSetting() {
         let settingVC = SettingVC()
         present(settingVC, animated: true)
-        if #available(iOS 13.0, *) {
-            settingVC.isModalInPresentation = true
-        }
+        print("[INFO] User opened setting.")
+        //if #available(iOS 13.0, *) {
+        //    settingVC.isModalInPresentation = true
+        //}
     }
 
     @objc func reloadGame() {
         self.webView.loadBlankPage()
-        self.webView.load()
+        self.webView.loadChanger()
+        print("[INFO] Changer should start load now.")
     }
 
 }

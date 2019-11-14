@@ -23,7 +23,8 @@
 #### [目前没有新Beta版]()
 
 
-#### 目前最新正式版本为1.0(CN.CHS.Release2.1)，我强烈建议使用最新正式版本进行游玩。 (更新日期:2019/10/14)
+#### 目前最新正式版本为1.0(CN.CHS.Release2.2)，我强烈建议使用最新正式版本进行游玩。 (更新日期:2019/11/15)
+#### 由于本人没有iOS 12的装置可以Debug，且本程式已支援iOS 13，如遇到不预期的问题请更新iOS至最新版，谢谢。
 源码可能和发布的版本有差，还请想自己编译的提督注意。
 
 原作者由于Apple不给审核，已经暂缓本程式的更新计画，主版本将维持在1.0直到原作者发布更新，本人仍会努力修复现有Bug，也希望有Swift程式设计经验的提督能协助程式的完善。
@@ -41,7 +42,9 @@
 [iOS端的设定](https://drive.google.com/file/d/1dPbtrt4gwdot0WhdZ5hTiTenc_4j1wem/view?usp=sharing)
 
 有越狱用户安装可以参考https://mrmad.com.tw/reprovision
-，可以自动重新签名，或使用AppSync直接Fake Sign（进阶）。
+，可以自动重新签名，或使用AppSync直接Fake Sign（进阶，[这里](https://forum.gamer.com.tw/Co.php?bsn=24698&sn=126018&subbsn=1&bPage=0)有教学）。
 
 ## 联系我(Bug回报或功能建议)
 [Email](mailto:ming900518@gmail.com)
+
+[Twitter（请直接DM我）](https://twitter.com/mingchang137)

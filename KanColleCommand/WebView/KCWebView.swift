@@ -39,11 +39,15 @@ class KCWebView: UIWebView {
         let url = URL(string: "about:blank")
         loadRequest(URLRequest(url: url!))
     }
+    func loadChanger() {
+        let url = URL(string: Constants.CHANGER)
+        loadRequest(URLRequest(url: url!))
+    }
 
     @objc private func gameStart(n: Notification) {
         OperationQueue.main.addOperation {
-            if (UIScreen.current <= .iPhone6_5) {
             self.stringByEvaluatingJavaScript(from: Constants.FULL_SCREEN_SCRIPT)
+            if (UIScreen.current <= .iPhone6_5) {
             self.stringByEvaluatingJavaScript(from: Constants.darkBG)
             }
         }
@@ -71,7 +75,7 @@ extension KCWebView: UIWebViewDelegate {
                         Oyodo.attention().api(url: url, request: header, response: body.replacingOccurrences(of: "svdata=", with: ""))
                     }
                 } catch {
-                    print("Error parse response")
+                    print("[Error] Error parse response")
                 }
             }
             return false
@@ -81,6 +85,7 @@ extension KCWebView: UIWebViewDelegate {
     }
 
     public func webViewDidStartLoad(_ webView: UIWebView) {
+
     }
 
     public func webViewDidFinishLoad(_ webView: UIWebView) {
