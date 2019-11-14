@@ -18,9 +18,8 @@
 
 ## 如何安装 (台灣及港澳地區用戶請使用[這裡](https://github.com/ming900518/KC2CHT)的版本)
 
-#### [点此查看最新正式版](https://github.com/ming900518/iKanColleCommand/releases/tag/Release2.1)
+#### [点此查看最新正式版](https://github.com/ming900518/iKanColleCommand/releases/tag/Release2.2)
 
-#### [目前没有新Beta版]()
 
 
 #### 目前最新正式版本为1.0(CN.CHS.Release2.2)，我强烈建议使用最新正式版本进行游玩。 (更新日期:2019/11/15)
