@@ -1,4 +1,9 @@
-# iKanColleCommand
+# iKanColleCommand（暂时停止更新，请使用[繁体中文](https://github.com/ming900518/KC2CHT)版）
+
+### 由于本人学业繁忙，难以维持更新三种语言版本，即日起暂停简体中文版及英文版之更新。 （最新版本为Release 2.2及Release2.2.1）
+
+### Release 2.2.2及之后更新版本的源码会上传至繁体中文版GitHub，欢迎使用者加入contributor或fork源码把繁体中文版的更新内容移植过来。
+
 修改自原作者NGA用户亖葉(UID42542015)于2019年7月4号发布的iKanColleCommand专案，提供iOS用户稳定的舰队收藏游戏环境和基本的辅助程式功能。
 
 [NGA帖子连结](https://ngabbs.com/read.php?tid=17767319)
