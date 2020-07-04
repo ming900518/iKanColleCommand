@@ -89,6 +89,12 @@ class CacheManager {
     }
 
     private class func baseDir() -> String {
-        return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last! + "/cache"
+        if Setting.getchangeCacheDir() == 1 {
+            print("[INFO] Using Documents as cache dir.")
+            return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
+        } else {
+            print("[INFO] Using Library/Caches/cache as cache dir.")
+            return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last! + "/cache"
+        }
         }
     }

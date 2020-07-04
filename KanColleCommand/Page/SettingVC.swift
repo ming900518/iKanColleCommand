@@ -15,12 +15,16 @@ class SettingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let backgroundColor = UIColor(hexString: "#FBFBFB")
-        self.view.backgroundColor = backgroundColor
+        let toolbar = UIView()
+        if #available(iOS 13.0, *) {
+            self.view.backgroundColor = UIColor.systemBackground
+            //toolbar.backgroundColor = UIColor.systemFill
+        } else {
+            self.view.backgroundColor = UIColor(hexString: "#FBFBFB")
+            //toolbar.backgroundColor = UIColor(hexString: "#FBFBFB")
+        }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.landscape = true
-        let toolbar = UIView()
-        toolbar.backgroundColor = backgroundColor
         self.view.addSubview(toolbar)
 
         let titleBar = UIView()
@@ -32,8 +36,12 @@ class SettingVC: UIViewController {
         }
 
         let titleText = UILabel()
-        titleText.text = "iKanColleCommand Tweaked - Chinese Simplified"
-        titleText.textColor = UIColor.black
+        titleText.text = "设定"
+        if #available(iOS 13.0, *) {
+            titleText.textColor = UIColor.label
+        } else {
+            titleText.textColor = UIColor.black
+        }
         titleBar.addSubview(titleText)
         titleText.snp.makeConstraints { maker in
             maker.center.equalTo(titleBar.snp.center)
@@ -46,7 +54,11 @@ class SettingVC: UIViewController {
         }
 
         let toolbarDivider = UIView()
-        toolbarDivider.backgroundColor = UIColor(hexString: "#DDDDDD")
+        if #available(iOS 13.0, *) {
+            toolbarDivider.backgroundColor = UIColor.separator
+        } else {
+            toolbarDivider.backgroundColor = UIColor(hexString: "#DDDDDD")
+        }
         toolbar.addSubview(toolbarDivider)
         toolbarDivider.snp.makeConstraints { maker in
             maker.width.equalTo(toolbar.snp.width)
@@ -63,10 +75,18 @@ class SettingVC: UIViewController {
             maker.right.equalTo(titleBar.snp.right).offset(-16)
         }
 
-        settingTable = UITableView(frame: CGRect.zero, style: .grouped)
+        if #available(iOS 13.0, *) {
+            settingTable = UITableView(frame: CGRect.zero, style: .insetGrouped)
+        } else {
+            settingTable = UITableView(frame: CGRect.zero, style: .grouped)
+        }
         settingTable.delegate = self
         settingTable.dataSource = self
-        settingTable.backgroundColor = UIColor.clear
+        if #available(iOS 13.0, *) {
+            settingTable.backgroundColor = UIColor.systemGroupedBackground
+        } else {
+            settingTable.backgroundColor = UIColor.clear
+        }
         self.view.addSubview(settingTable)
         settingTable.snp.makeConstraints { maker in
             maker.width.equalTo(self.view.snp.width)
@@ -88,6 +108,72 @@ extension SettingVC: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section == 0) {
             if (indexPath.row == 0) {
+                var connection = String()
+                if Setting.getconnection() == 1{
+                    connection = "官方DMM网站（VPN/日本）"
+                } else if Setting.getconnection() == 2 {
+                    connection = "缓存系统ooi"
+                } else if Setting.getconnection() == 3 {
+                    connection = "缓存系统kancolle.su"
+                } else if Setting.getconnection() == 4 {
+                    connection = "官方DMM网站（修改Cookies，海外）"
+                } else {
+                    connection = "未知"
+                }
+                let info = UIAlertController(title: "请选择连线方式", message: "目前使用：\(connection)", preferredStyle: .actionSheet)
+                if let popoverController = info.popoverPresentationController {
+                    popoverController.sourceView = self.view
+                    popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                    popoverController.permittedArrowDirections = []
+                }
+                info.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                info.addAction(UIAlertAction(title: "官方DMM网站（VPN/日本）", style: .default) { action in
+                    Setting.saveconnection(value: 1)
+                    self.close()
+                })
+                info.addAction(UIAlertAction(title: "官方DMM网站（修改Cookies，海外）", style: .default) { action in
+                    Setting.saveconnection(value: 4)
+                    self.close()
+                })
+                info.addAction(UIAlertAction(title: "缓存系统ooi（全球用户可用）", style: .default) { action in
+                    Setting.saveconnection(value: 2)
+                    self.close()
+                })
+                info.addAction(UIAlertAction(title: "缓存系统kancolle.su（大陆地区以外）", style: .default) { action in
+                    Setting.saveconnection(value: 3)
+                    self.close()
+                })
+                self.present(info, animated: true)
+                print("Selected: ", Setting.getconnection())
+                self.settingTable.reloadData()
+            } else if (indexPath.row == 1) {
+                let info = UIAlertController(title: "请选择大破警告的类型", message: "选择类型2的情况下关闭推播通知会自动改为类型1\n\n目前使用：类型\(Setting.getwarningAlert())" ,preferredStyle: .actionSheet)
+                if let popoverController = info.popoverPresentationController {
+                    popoverController.sourceView = self.view
+                    popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                    popoverController.permittedArrowDirections = []
+                }
+                info.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                info.addAction(UIAlertAction(title: "1. 增强型（警告视窗）", style: .default) { action in
+                    Setting.savewarningAlert(value: 1)
+                    self.close()
+                })
+                info.addAction(UIAlertAction(title: "2. 增强型（推播通知）", style: .default) { action in
+                    Setting.savewarningAlert(value: 2)
+                    self.close()
+                })
+                info.addAction(UIAlertAction(title: "3. 一般型（仅有画面红框）", style: .default) { action in
+                    Setting.savewarningAlert(value: 3)
+                    self.close()
+                })
+                self.present(info, animated: true)
+                print("Selected: ", Setting.getwarningAlert())
+                self.settingTable.reloadData()
+            } else if (indexPath.section == 2){
+                //App Appearance
+            }
+        } else if (indexPath.section == 1) {
+            if (indexPath.row == 0){
                 print("[INFO] Retry setting started by user.")
                 let selector: UIAlertController = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
                 let picker = UIPickerView()
@@ -115,7 +201,7 @@ extension SettingVC: UITableViewDelegate {
                 self.present(selector, animated: true)
             } else if (indexPath.row == 1) {
                 print("[INFO] Cleaner started by user.")
-                let dialog = UIAlertController(title: nil, message: "使用须知\n\n1. 这功能会清空App所下载的Caches和Cookies\n2. 下次游戏载入时就会重新下载Caches，Cookies会自动重设\n3. 清除完毕后会开启登入方式切换器", preferredStyle: .actionSheet)
+                let dialog = UIAlertController(title: "使用须知", message: "1. 这功能会清空App所下载的Caches和Cookies\n2. 下次游戏载入时就会重新下载Caches，Cookies会自动重设\n3. 清除完毕后会自动关闭本App以确保完整清除", preferredStyle: .actionSheet)
                 if let popoverController = dialog.popoverPresentationController {
                     popoverController.sourceView = self.view
                     popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
@@ -130,19 +216,88 @@ extension SettingVC: UITableViewDelegate {
                         }
                     }
                     CacheManager.clearCache()
-                    NotificationCenter.default.post(Notification.init(name: Constants.RELOAD_GAME))
                     print("[INFO] Everything cleaned.")
-                    self.close()
+                    let result = UIAlertController(title: "清理完成", message: "本App即将关闭", preferredStyle: .alert)
+                    result.addAction(UIAlertAction(title: "确定", style: .default) { action in
+                        exit(0)
+                    })
+                    self.present(result, animated: true)
                 })
                 self.present(dialog, animated: true)
+            } else if (indexPath.row == 2) {
+                if Setting.getchangeCacheDir() == 0 {
+                    let dialog = UIAlertController(title: "功能说明", message: "1. 本功能开启后，用户能自行修改Cache内容\n2. 启用前会先清理缓存，功能启用完成后会关闭本App\n\n免责声明：如自行修改造成游戏不稳定或白底黑字的状况，本App相关所有开发者均不对此负责",    preferredStyle: .actionSheet)
+                    if let popoverController = dialog.popoverPresentationController {
+                        popoverController.sourceView = self.view
+                        popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                        popoverController.permittedArrowDirections = []
+                    }
+                    dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                    dialog.addAction(UIAlertAction(title: "我已了解,使用本功能", style: .destructive) { action in
+                        print("[INFO] Cleaner confirmed by user. Start cleaning.")
+                        if let cookies = HTTPCookieStorage.shared.cookies {
+                            for cookie in cookies {
+                                HTTPCookieStorage.shared.deleteCookie(cookie)
+                            }
+                        }
+                        CacheManager.clearCache()
+                        print("[INFO] Everything cleaned.")
+                        Setting.savechangeCacheDir(value: 1)
+                        let result = UIAlertController(title: "功能开启完成", message: "本App即将关闭", preferredStyle: .alert)
+                        result.addAction(UIAlertAction(title: "确定", style: .default) { action in
+                            exit(0)
+                        })
+                        self.present(result, animated: true)
+                    })
+                    self.present(dialog, animated: true)
+                } else {
+                    let dialog = UIAlertController(title: "功能说明", message: "1. 本功能关闭后，用户不再能自行修改Cache内容\n2. 关闭前会先清理缓存，所有之前做出的变更均会被删除，功能关闭完成后会关闭本App", preferredStyle: .actionSheet)
+                    if let popoverController = dialog.popoverPresentationController {
+                        popoverController.sourceView = self.view
+                        popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                        popoverController.permittedArrowDirections = []
+                    }
+                    dialog.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                    dialog.addAction(UIAlertAction(title: "关闭本功能", style: .destructive) { action in
+                        print("[INFO] Cleaner confirmed by user. Start cleaning.")
+                        if let cookies = HTTPCookieStorage.shared.cookies {
+                            for cookie in cookies {
+                                HTTPCookieStorage.shared.deleteCookie(cookie)
+                            }
+                        }
+                        CacheManager.clearCache()
+                        print("[INFO] Everything cleaned.")
+                        Setting.savechangeCacheDir(value: 0)
+                        let result = UIAlertController(title: "功能关闭完成", message: "本App即将关闭", preferredStyle: .alert)
+                        result.addAction(UIAlertAction(title: "确定", style: .default) { action in
+                            exit(0)
+                        })
+                        self.present(result, animated: true)
+                    })
+                    self.present(dialog, animated: true)
+                }
             }
         } else if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
+            if (indexPath.row == 1) {
+                let info = UIAlertController(title: "关于本App", message: "本App修改自NGA用户亖葉(UID42542015)于2019年7月4号发布的iKanColleCommand专案，提供iOS用户稳定的舰队收藏游戏环境和基本的辅助程式功能。\n\n修​​改者：Ming Chang\n\n特别感谢\nDavid Huang（图形技术支援、巴哈文维护）\n@Senka_Viewer（OOI相关技术支援）",preferredStyle: .actionSheet)
+                if let popoverController = info.popoverPresentationController {
+                    popoverController.sourceView = self.view
+                    popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                    popoverController.permittedArrowDirections = []
+                }
+                info.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                info.addAction(UIAlertAction(title: "前往本修改版App官方网站", style: .default) { action in
                     if let url = URL(string:"https://kc2tweaked.github.io") {
-                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                        print("[INFO] Homepage opened.")
+                    UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                     }
-            } else if (indexPath.row == 1) {
+                })
+                info.addAction(UIAlertAction(title: "加入Discord", style: .default) { action in
+                    if let url = URL(string:"https://discord.gg/Yesf3cN") {
+                    UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+                    }
+                })
+                self.present(info, animated: true)
+            } else if (indexPath.row == 2) {
                 let dialog = UIAlertController(title: "请选择渠道", message: nil, preferredStyle: .actionSheet)
                 if let popoverController = dialog.popoverPresentationController {
                     popoverController.sourceView = self.view
@@ -163,7 +318,6 @@ extension SettingVC: UITableViewDelegate {
                 self.present(dialog, animated: true)
             }
         }
-
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -179,53 +333,98 @@ extension SettingVC: UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDa
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
-
+    
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let title2 = section == 2 ? "其他" : nil
+        let title1 = section == 1 ? "连线与缓存" : title2
+        let title = section == 0 ? "App设定" : title1
+        return title
+    }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.section == 0) {
             if (indexPath.row == 0) {
+                var connection = String()
+                if Setting.getconnection() == 1{
+                    connection = "官方DMM网站（VPN/日本）"
+                } else if Setting.getconnection() == 2 {
+                    connection = "缓存系统ooi"
+                } else if Setting.getconnection() == 3 {
+                    connection = "缓存系统kancolle.su"
+                } else if Setting.getconnection() == 4 {
+                    connection = "官方DMM网站（修改Cookies，海外）"
+                } else {
+                    connection = "未知"
+                }
                 let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
-                cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "连接重试次数 (0为不重试)"
-                cell.detailTextLabel?.text = "\(Setting.getRetryCount())"
+                cell.textLabel?.text = "连线方式"
+                cell.detailTextLabel?.text = connection
                 cell.accessoryType = .disclosureIndicator
                 return cell
             } else if (indexPath.row == 1) {
-                let cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-                cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "清理旧Caches和Cookies"
+                let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+                cell.textLabel?.text = "大破警告"
+                cell.detailTextLabel?.text = "类型\(Setting.getwarningAlert())"
                 cell.accessoryType = .disclosureIndicator
+                return cell
+            } else if (indexPath.row == 2) {
+                let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+                cell.textLabel?.text = "App Icon切换"
+                let switchView = UISwitch(frame: .zero)
+                if Setting.getAppIconChange() == 0 {
+                    switchView.setOn(false, animated: false)
+                } else {
+                    switchView.setOn(true, animated: false)
+                }
+                switchView.tag = indexPath.row // for detect which row switch Changed
+                switchView.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
+                cell.accessoryView = switchView
                 return cell
             }
         } else if (indexPath.section == 1) {
             if (indexPath.row == 0) {
                 let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
-                cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "当前版本"
+                cell.textLabel?.text = "连接重试次数 (0为不重试)"
+                cell.detailTextLabel?.text = "\(Setting.getRetryCount())"
+                cell.accessoryType = .disclosureIndicator
+                return cell
+            } else if (indexPath.row == 1) {
+                let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+                cell.textLabel?.text = "清理Caches和Cookies"
+                cell.accessoryType = .disclosureIndicator
+                return cell
+            } else if (indexPath.row == 2) {
+                let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
+                cell.textLabel?.text = "App File Sharing"
+                cell.detailTextLabel?.textColor = UIColor.lightGray
+                if Setting.getchangeCacheDir() == 0 {
+                    cell.detailTextLabel?.text = "功能尚未启用，启用本功能后无需越狱即可使用iFunBox等档案管理工具对Cache进行修改"
+                } else {
+                    cell.detailTextLabel?.text = "功能已启用"
+                }
+                cell.accessoryType = .disclosureIndicator
+                return cell
+            }
+        } else if (indexPath.section == 2) {
+            if (indexPath.row == 0) {
+                let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+                cell.textLabel?.text = "App版本"
+                cell.isUserInteractionEnabled = false
                 if let versionCode = Bundle.main.infoDictionary?["CFBundleShortVersionString"] {
                     cell.detailTextLabel?.text = "\(versionCode)"
                 }
                 return cell
             } else if (indexPath.row == 1) {
-                let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
-                cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "程式功能"
-                cell.detailTextLabel?.text = "基本游戏、辅助程式、大破警告、Cookies修改"
-                return cell
-            }
-        } else if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
                 let cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-                cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "前往修改版官方网站"
+                cell.textLabel?.text = "关于本App"
                 cell.accessoryType = .disclosureIndicator
                 return cell
-            } else if (indexPath.row == 1) {
+            } else if (indexPath.row == 2) {
                 let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
-                cell.backgroundColor = UIColor.white
-                cell.textLabel?.text = "捐赠原作者（非修改版作者）"
-                cell.detailTextLabel?.text = "支持原本的dalao吧～我就不用了，大家玩得开心最重要"
+                cell.textLabel?.text = "捐赠原作者"
+                cell.detailTextLabel?.text = "支持原本的大佬吧～"
                 cell.detailTextLabel?.textColor = UIColor.lightGray
                 cell.accessoryType = .disclosureIndicator
                 return cell
@@ -248,6 +447,28 @@ extension SettingVC: UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDa
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "\(row)"
+    }
+    
+    @objc public func switchChanged(_ sender : UISwitch!){
+        print("table row switch Changed \(sender.tag)")
+        print("The switch is \(sender.isOn ? "ON" : "OFF")")
+        if sender.isOn == true {
+            if UIApplication.shared.supportsAlternateIcons {
+                print("current icon is primary icon, change to alternative icon")
+                UIApplication.shared.setAlternateIconName("AlternateIcon"){ error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        print("Done!")
+                    }
+                }
+                Setting.saveAppIconChange(value: 1)
+            }
+        } else {
+            print("change to primary icon")
+            UIApplication.shared.setAlternateIconName(nil)
+            Setting.saveAppIconChange(value: 0)
+        }
     }
 
 }

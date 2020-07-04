@@ -21,7 +21,11 @@ class FleetVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = ViewController.DEFAULT_BACKGROUND
+        if Setting.getUseTheme() == 0 {
+            self.view.backgroundColor = ViewController.DEFAULT_BACKGROUND
+        } else {
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        }
         setupList()
         setupIndicator()
         watchShipMap()
@@ -50,7 +54,7 @@ class FleetVC: UIViewController {
         fleetHint.snp.makeConstraints { maker in
             maker.left.equalTo(shipListView.snp.left).offset(8)
             maker.right.equalTo(shipListView.snp.right).offset(-8)
-            maker.top.equalTo(shipListView.snp.top).offset(8)
+            maker.top.equalTo(shipListView.snp.bottom).inset(24)//.offset(8)
         }
     }
 
@@ -280,23 +284,23 @@ private class ShipCell: UITableViewCell {
         }
 
         // Slot ex
-        //slotEx = UIImageView()
-        //root.addSubview(slotEx)
-        //slotEx.snp.makeConstraints { maker in
-        //    maker.width.equalTo(16)
-        //    maker.height.equalTo(16)
-        //    maker.right.equalTo(condText.snp.left).offset(-12)
-        //    maker.centerY.equalTo(condText.snp.centerY)
-        //}
+        slotEx = UIImageView()
+        root.addSubview(slotEx)
+        slotEx.snp.makeConstraints { maker in
+            maker.width.equalTo(16)
+            maker.height.equalTo(16)
+            maker.right.equalTo(condText.snp.left).offset(-12)
+            maker.centerY.equalTo(condText.snp.centerY)
+        }
 
         // Divider
-//        let divider = UIView()
-//        addSubview(divider)
-//        divider.snp.makeConstraints { maker in
-//            maker.width.equalTo(self)
-//            maker.height.equalTo(4)
-//            maker.bottom.equalTo(self)
-//        }
+        //let divider = UIView()
+        //addSubview(divider)
+        //divider.snp.makeConstraints { maker in
+            //maker.width.equalTo(self)
+            //maker.height.equalTo(4)
+            //maker.bottom.equalTo(self)
+        //}
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -322,9 +326,12 @@ private class ShipCell: UITableViewCell {
             condText.textColor = getConditionColor(cond: ship.condition)
             hpText.text = "\(max(ship.hp(), 1)) / \(ship.maxHp)"
             statusTag.image = getTagImage(shipId: ship.id)
-            if Fleet.instance.slotMap[ship.itemEx] != nil {
-            //if let exItem = Fleet.instance.slotMap[ship.itemEx] {
-                //slotEx.image = UIImage.init(named: "slot_\(exItem.type).png")
+            //if Fleet.instance.slotMap[ship.itemEx] != nil {
+            if let exItem = Fleet.instance.slotMap[ship.itemEx] {
+                slotEx.image = UIImage.init(named: "slot_\(exItem.type).png")
+            }
+            else {
+                slotEx.image = UIImage.init(named: "slot_0.png")
             }
         } else {
             hp.set(percent: 0)
@@ -336,8 +343,7 @@ private class ShipCell: UITableViewCell {
             condText.text = ""
             hpText.text = ""
             statusTag.image = nil
-            slotEx.image = nil
+            slotEx.image = UIImage.init(named: "slot_0.png")
         }
     }
-
 }

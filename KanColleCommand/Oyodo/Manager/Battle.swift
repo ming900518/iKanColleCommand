@@ -243,27 +243,27 @@ class Battle {
         if (friendSunkCount == 0) {
             if (enemySunkCount == enemyCount) {
                 if (friendDamageSum == 0) {
-                    rank = "SS胜"
+                    rank = "SS"
                 } else {
-                    rank = "S胜"
+                    rank = "S"
                 }
             } else if (enemyCount > 1 && enemySunkCount >= Int(floor(0.7 * Float(enemyCount)))) {
-                rank = "A胜"
+                rank = "A"
             } else if (enemyFlagShipSunk && friendSunkCount < enemySunkCount) {
-                rank = "B胜"
+                rank = "B"
             } /*else if (friendCount == 1 && friendFlagshipCritical) {
                 rank = "D敗"
             }*/ else if (enemyDamageRate * 2 > friendDamageRate * 5) {
-                rank = "B败"
+                rank = "B"
             } else if (enemyDamageRate * 10 > friendDamageRate * 9) {
-                rank = "C败"
+                rank = "C"
             } else {
-                rank = "D败"
+                rank = "D"
             }
         } else if (friendCount - friendSunkCount == 1) {
-            rank = "E败"
+            rank = "E"
         } else {
-            rank = "D败"
+            rank = "D"
         }
     }
 

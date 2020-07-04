@@ -10,7 +10,24 @@
 		421A2643226C0DE500AEC67D /* bridge.js in Resources */ = {isa = PBXBuildFile; fileRef = C60370758B94FB19D95980E0 /* bridge.js */; };
 		423AF77A219FECC100C4BCE9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423AF779219FECC100C4BCE9 /* WebKit.framework */; };
 		42C20DA922C5B4A400235A19 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C20DA822C5B4A400235A19 /* Photos.framework */; };
+		7A3512142499F7C600E7557E /* AlternateIcon40x40@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3512062499F7C500E7557E /* AlternateIcon40x40@1x.png */; };
+		7A3512172499F7C600E7557E /* AlternateIcon20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3512092499F7C500E7557E /* AlternateIcon20x20@2x.png */; };
+		7A3512182499F7C600E7557E /* AlternateIcon29x29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A35120A2499F7C500E7557E /* AlternateIcon29x29@1x.png */; };
+		7A3512192499F7C600E7557E /* AlternateIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A35120B2499F7C500E7557E /* AlternateIcon29x29@2x.png */; };
+		7A35121B2499F7C600E7557E /* AlternateIcon83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A35120D2499F7C500E7557E /* AlternateIcon83.5x83.5@2x.png */; };
+		7A35121C2499F7C600E7557E /* AlternateIcon76x76@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A35120E2499F7C500E7557E /* AlternateIcon76x76@1x.png */; };
+		7A35121D2499F7C600E7557E /* AlternateIcon20x20@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A35120F2499F7C600E7557E /* AlternateIcon20x20@1x.png */; };
+		7A35121E2499F7C600E7557E /* AlternateIcon20x20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3512102499F7C600E7557E /* AlternateIcon20x20@3x.png */; };
+		7A35121F2499F7C600E7557E /* AlternateIcon29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3512112499F7C600E7557E /* AlternateIcon29x29@3x.png */; };
+		7A3512212499F7C600E7557E /* AlternateIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3512132499F7C600E7557E /* AlternateIcon76x76@2x.png */; };
+		7A3512292499FAD000E7557E /* AlternateIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3512262499FAD000E7557E /* AlternateIcon@2x.png */; };
+		7A35122A2499FAD000E7557E /* AlternateIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3512272499FAD000E7557E /* AlternateIcon@3x.png */; };
+		7A35122B2499FAD000E7557E /* AlternateIcon40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3512282499FAD000E7557E /* AlternateIcon40x40@3x.png */; };
+		7A35122D2499FAE000E7557E /* AlternateIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A35122C2499FAE000E7557E /* AlternateIcon40x40@2x.png */; };
 		7AAE039023374CAB00FC27F8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AAE038F23374CAB00FC27F8 /* AudioToolbox.framework */; };
+		7ACE2D5B247774FD007F4F57 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7ACE2D5A247774FD007F4F57 /* Settings.bundle */; };
+		7AFCA242248C987300A991F3 /* AppearanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFCA241248C987300A991F3 /* AppearanceVC.swift */; };
+		C18407F7E883A388E01EC15A /* libPods-KanColleCommand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A215CC563D20C8D89C53CA /* libPods-KanColleCommand.a */; };
 		C600267289FBB1B5CB83D4F7 /* BattleNightSp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C600E2F28E1FB2811C399D06 /* BattleNightSp.swift */; };
 		C60032DCBAD6778EA3AB8E6A /* slot_36.png in Resources */ = {isa = PBXBuildFile; fileRef = C6025C1FA627C532327B8DE5 /* slot_36.png */; };
 		C600576CDD4CBA34995FE911 /* slot_32.png in Resources */ = {isa = PBXBuildFile; fileRef = C605E233C8A8C4329F2B809E /* slot_32.png */; };
@@ -151,7 +168,6 @@
 		C60F8E85C3EF7DE8B8BB9075 /* slot_12.png in Resources */ = {isa = PBXBuildFile; fileRef = C601FB15A67D3CB043A9CCA2 /* slot_12.png */; };
 		C60FBBD4A180D38C89FEA760 /* slot_37.png in Resources */ = {isa = PBXBuildFile; fileRef = C606278A5F4F5B2ABE2721B1 /* slot_37.png */; };
 		C60FE283DECB748D6AF52FFF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60977D55641E6FF5131EE0E /* Constants.swift */; };
-		CABACA2C6DCC15F3AAA97F0B /* Pods_KanColleCommand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B0E6346279897DF1C7D1A8 /* Pods_KanColleCommand.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,9 +176,24 @@
 		4211C351228C636100F7B267 /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		423AF779219FECC100C4BCE9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		42C20DA822C5B4A400235A19 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		61B0E6346279897DF1C7D1A8 /* Pods_KanColleCommand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanColleCommand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A3512062499F7C500E7557E /* AlternateIcon40x40@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon40x40@1x.png"; sourceTree = "<group>"; };
+		7A3512092499F7C500E7557E /* AlternateIcon20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon20x20@2x.png"; sourceTree = "<group>"; };
+		7A35120A2499F7C500E7557E /* AlternateIcon29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon29x29@1x.png"; sourceTree = "<group>"; };
+		7A35120B2499F7C500E7557E /* AlternateIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon29x29@2x.png"; sourceTree = "<group>"; };
+		7A35120D2499F7C500E7557E /* AlternateIcon83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon83.5x83.5@2x.png"; sourceTree = "<group>"; };
+		7A35120E2499F7C500E7557E /* AlternateIcon76x76@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon76x76@1x.png"; sourceTree = "<group>"; };
+		7A35120F2499F7C600E7557E /* AlternateIcon20x20@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon20x20@1x.png"; sourceTree = "<group>"; };
+		7A3512102499F7C600E7557E /* AlternateIcon20x20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon20x20@3x.png"; sourceTree = "<group>"; };
+		7A3512112499F7C600E7557E /* AlternateIcon29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon29x29@3x.png"; sourceTree = "<group>"; };
+		7A3512132499F7C600E7557E /* AlternateIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon76x76@2x.png"; sourceTree = "<group>"; };
+		7A3512262499FAD000E7557E /* AlternateIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon@2x.png"; sourceTree = "<group>"; };
+		7A3512272499FAD000E7557E /* AlternateIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon@3x.png"; sourceTree = "<group>"; };
+		7A3512282499FAD000E7557E /* AlternateIcon40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon40x40@3x.png"; sourceTree = "<group>"; };
+		7A35122C2499FAE000E7557E /* AlternateIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlternateIcon40x40@2x.png"; sourceTree = "<group>"; };
 		7AAE038E23374CAB00FC27F8 /* KanColleCommand.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanColleCommand.entitlements; sourceTree = "<group>"; };
 		7AAE038F23374CAB00FC27F8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7ACE2D5A247774FD007F4F57 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		7AFCA241248C987300A991F3 /* AppearanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceVC.swift; sourceTree = "<group>"; };
 		7AFE95562339C57D006D8854 /* KanColleCommand.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = KanColleCommand.profdata; sourceTree = "<group>"; };
 		A13C1AA5A0C1AE357F660C12 /* Pods-KanColleCommand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanColleCommand.release.xcconfig"; path = "Pods/Target Support Files/Pods-KanColleCommand/Pods-KanColleCommand.release.xcconfig"; sourceTree = "<group>"; };
 		C600010C70E9931478A661DB /* DestroyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestroyItem.swift; sourceTree = "<group>"; };
@@ -309,6 +340,7 @@
 		C60FE5A3EA598BCB448EB3D1 /* RequireInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequireInfo.swift; sourceTree = "<group>"; };
 		C60FED5948C8DDD3C4C01BDE /* BattleResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleResult.swift; sourceTree = "<group>"; };
 		C60FF98AA6E3FDAC202E22EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7A215CC563D20C8D89C53CA /* libPods-KanColleCommand.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KanColleCommand.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,14 +350,43 @@
 			files = (
 				42C20DA922C5B4A400235A19 /* Photos.framework in Frameworks */,
 				423AF77A219FECC100C4BCE9 /* WebKit.framework in Frameworks */,
-				CABACA2C6DCC15F3AAA97F0B /* Pods_KanColleCommand.framework in Frameworks */,
 				7AAE039023374CAB00FC27F8 /* AudioToolbox.framework in Frameworks */,
+				C18407F7E883A388E01EC15A /* libPods-KanColleCommand.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A22168F24836D87005F7AA2 /* ChangeIcon */ = {
+			isa = PBXGroup;
+			children = (
+				7A22169024836D99005F7AA2 /* AlternateIcon */,
+			);
+			path = ChangeIcon;
+			sourceTree = "<group>";
+		};
+		7A22169024836D99005F7AA2 /* AlternateIcon */ = {
+			isa = PBXGroup;
+			children = (
+				7A3512262499FAD000E7557E /* AlternateIcon@2x.png */,
+				7A3512272499FAD000E7557E /* AlternateIcon@3x.png */,
+				7A35120F2499F7C600E7557E /* AlternateIcon20x20@1x.png */,
+				7A3512092499F7C500E7557E /* AlternateIcon20x20@2x.png */,
+				7A3512102499F7C600E7557E /* AlternateIcon20x20@3x.png */,
+				7A35120A2499F7C500E7557E /* AlternateIcon29x29@1x.png */,
+				7A35120B2499F7C500E7557E /* AlternateIcon29x29@2x.png */,
+				7A3512112499F7C600E7557E /* AlternateIcon29x29@3x.png */,
+				7A3512062499F7C500E7557E /* AlternateIcon40x40@1x.png */,
+				7A35122C2499FAE000E7557E /* AlternateIcon40x40@2x.png */,
+				7A3512282499FAD000E7557E /* AlternateIcon40x40@3x.png */,
+				7A35120E2499F7C500E7557E /* AlternateIcon76x76@1x.png */,
+				7A3512132499F7C600E7557E /* AlternateIcon76x76@2x.png */,
+				7A35120D2499F7C500E7557E /* AlternateIcon83.5x83.5@2x.png */,
+			);
+			path = AlternateIcon;
+			sourceTree = "<group>";
+		};
 		7AFE95552339C57D006D8854 /* OptimizationProfiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +401,7 @@
 				7AAE038F23374CAB00FC27F8 /* AudioToolbox.framework */,
 				42C20DA822C5B4A400235A19 /* Photos.framework */,
 				423AF779219FECC100C4BCE9 /* WebKit.framework */,
-				61B0E6346279897DF1C7D1A8 /* Pods_KanColleCommand.framework */,
+				D7A215CC563D20C8D89C53CA /* libPods-KanColleCommand.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -473,6 +534,7 @@
 				C60EA856D4DB1DF671528A6C /* KanColleCommand.xcdatamodeld */,
 				C60455A64ED941BA04F24F84 /* Main.storyboard */,
 				C6036FA901882B8B05B68BEF /* ViewController.swift */,
+				7ACE2D5A247774FD007F4F57 /* Settings.bundle */,
 				C60034025BC06BEFD54E9581 /* WebView */,
 				C60CDA8BA003B0BBAEA1CD7C /* Oyodo */,
 				C60D9676866519A3F0CD005B /* Page */,
@@ -498,6 +560,7 @@
 		C60C58F4F83EBBB65542A353 = {
 			isa = PBXGroup;
 			children = (
+				7A22168F24836D87005F7AA2 /* ChangeIcon */,
 				C60FBAC9174031D5C6987FCC /* Products */,
 				C608938942B0394D84C007B2 /* KanColleCommand */,
 				DC7CF1DEE2D982A4DFE10DDF /* Pods */,
@@ -525,6 +588,7 @@
 				C602AA615C49053A678E2107 /* BattleVC.swift */,
 				C604D66013768942680732EA /* MissionVC.swift */,
 				C60BA2F315190D76C746A3F4 /* SettingVC.swift */,
+				7AFCA241248C987300A991F3 /* AppearanceVC.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -625,7 +689,6 @@
 				C600B767148ABC41D5EFCC26 /* Sources */,
 				C6004879D9A5BFFB6BD47C2A /* Frameworks */,
 				C600658DDED1A12D246083DA /* Resources */,
-				B83A133341B8D3E63C247C17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -686,23 +749,32 @@
 				C605DA4B8164758F74665902 /* Main.storyboard in Resources */,
 				C60D48474DCBBA3A4D7D0ECD /* slot_0.png in Resources */,
 				C60E0B0F6C9ED731A71C5388 /* slot_1.png in Resources */,
+				7A35121C2499F7C600E7557E /* AlternateIcon76x76@1x.png in Resources */,
 				C6046434F18C87BE2A5DF593 /* slot_2.png in Resources */,
+				7A35122B2499FAD000E7557E /* AlternateIcon40x40@3x.png in Resources */,
+				7A35121F2499F7C600E7557E /* AlternateIcon29x29@3x.png in Resources */,
+				7A35121B2499F7C600E7557E /* AlternateIcon83.5x83.5@2x.png in Resources */,
+				7A3512172499F7C600E7557E /* AlternateIcon20x20@2x.png in Resources */,
 				C6018F0698B60E50F8B996C1 /* slot_3.png in Resources */,
 				C60BADC7E205AD6D6D22E60E /* slot_4.png in Resources */,
 				C6050E55149578F056F9180B /* slot_5.png in Resources */,
 				C607188757501EBC6FFFF37F /* slot_6.png in Resources */,
+				7A35122A2499FAD000E7557E /* AlternateIcon@3x.png in Resources */,
 				C60239428DAE4A227835277B /* slot_7.png in Resources */,
 				C608BD76EEF300700746FADD /* slot_8.png in Resources */,
 				C60634D6BAE6683EDBF5A5B8 /* slot_9.png in Resources */,
 				C60D80F0D2FDD7AE43D368D0 /* slot_10.png in Resources */,
 				C6056278517588C75E248BBA /* slot_11.png in Resources */,
 				C60F8E85C3EF7DE8B8BB9075 /* slot_12.png in Resources */,
+				7A35121E2499F7C600E7557E /* AlternateIcon20x20@3x.png in Resources */,
+				7A3512182499F7C600E7557E /* AlternateIcon29x29@1x.png in Resources */,
 				C60DC78799D1DBDCF1ACE67B /* slot_13.png in Resources */,
 				C605690EC672B8B4B76E1F44 /* slot_14.png in Resources */,
 				C60A6F912883AA809340A6FD /* slot_15.png in Resources */,
 				C608FC0EDE88654B27BFA295 /* slot_16.png in Resources */,
 				C60CA431AF561B9291CA172D /* slot_17.png in Resources */,
 				C606B75BDE21941F0523E345 /* slot_18.png in Resources */,
+				7A35122D2499FAE000E7557E /* AlternateIcon40x40@2x.png in Resources */,
 				C609C95CD5C53CB65D9F9A43 /* slot_19.png in Resources */,
 				C607F672E47C15799C166228 /* slot_20.png in Resources */,
 				C60161BE4528F4D1C509E9CE /* slot_21.png in Resources */,
@@ -717,9 +789,12 @@
 				C60CD193DE76711747D86253 /* slot_30.png in Resources */,
 				C60D759334B2C7A63B512E93 /* slot_31.png in Resources */,
 				C600576CDD4CBA34995FE911 /* slot_32.png in Resources */,
+				7A3512142499F7C600E7557E /* AlternateIcon40x40@1x.png in Resources */,
 				C60DAD846A16343C9C64BF94 /* slot_33.png in Resources */,
 				C602A766A6383FF2C8ACC4AB /* slot_34.png in Resources */,
 				C60A7EA4D4DC8CE082EF4726 /* slot_35.png in Resources */,
+				7ACE2D5B247774FD007F4F57 /* Settings.bundle in Resources */,
+				7A3512192499F7C600E7557E /* AlternateIcon29x29@2x.png in Resources */,
 				C60032DCBAD6778EA3AB8E6A /* slot_36.png in Resources */,
 				C60FBBD4A180D38C89FEA760 /* slot_37.png in Resources */,
 				C608A0CD95B9B380E9D136FE /* slot_38.png in Resources */,
@@ -732,6 +807,9 @@
 				C6018D258A9079D6193570FF /* slot_45.png in Resources */,
 				C60380E7F74A8EC05F884F2E /* slot_46.png in Resources */,
 				C604DD0442B6E9538719A232 /* slot_47.png in Resources */,
+				7A3512212499F7C600E7557E /* AlternateIcon76x76@2x.png in Resources */,
+				7A3512292499FAD000E7557E /* AlternateIcon@2x.png in Resources */,
+				7A35121D2499F7C600E7557E /* AlternateIcon20x20@1x.png in Resources */,
 				C6015D5598A8D97D44AE3F12 /* map.json in Resources */,
 				C60577F895480B218423004E /* tag_repair.png in Resources */,
 				C60755B39CF8DD92AA4F79A6 /* reload.png in Resources */,
@@ -765,38 +843,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B83A133341B8D3E63C247C17 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KanColleCommand/Pods-KanColleCommand-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ScreenType/ScreenType.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScreenType.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KanColleCommand/Pods-KanColleCommand-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -807,6 +853,7 @@
 				C6036A28F3CABAA0233A4253 /* AppDelegate.swift in Sources */,
 				C602569B2F6BC8FBC5614C09 /* KanColleCommand.xcdatamodeld in Sources */,
 				C6064A58220B8304A0405325 /* ViewController.swift in Sources */,
+				7AFCA242248C987300A991F3 /* AppearanceVC.swift in Sources */,
 				C607EA6D9705FB67766730F9 /* WebHandler.swift in Sources */,
 				C603DED3E2CE59CD95419684 /* CacheManager.swift in Sources */,
 				C60BA0B9848CD566ADC37678 /* Utils.swift in Sources */,
@@ -917,22 +964,31 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A13C1AA5A0C1AE357F660C12 /* Pods-KanColleCommand.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = KanColleCommand/KanColleCommand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = RYS7R26Y6Y;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = KanColleCommand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = "1.0 (CN.CHS-Release2.2)";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.fork.cctech.kancolle.command;
+				MARKETING_VERSION = "1.0 (CN.CHS-R2.5.1Beta1)";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.fork.cctech.ikancollecmd;
 				PRODUCT_NAME = "便携式舰队司令部";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_INSTALLED_PRODUCT = YES;
+				STRIP_STYLE = "non-global";
+				STRIP_SWIFT_SYMBOLS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KanColleCommand/Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Release;
 		};
@@ -940,22 +996,30 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B1295577464041F4DC73396 /* Pods-KanColleCommand.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = KanColleCommand/KanColleCommand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = RYS7R26Y6Y;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = KanColleCommand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = "1.0 (CN.CHS-Release2.2)";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.fork.cctech.kancolle.command;
+				MARKETING_VERSION = "1.0 (CN.CHS-R2.5.1Beta1)";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.fork.cctech.ikancollecmd;
 				PRODUCT_NAME = "便携式舰队司令部";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_STYLE = "non-global";
+				STRIP_SWIFT_SYMBOLS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KanColleCommand/Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -1018,6 +1082,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KanColleCommand/Bridge-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -1069,10 +1134,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KanColleCommand/Bridge-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Release;
 		};

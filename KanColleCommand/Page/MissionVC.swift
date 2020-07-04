@@ -17,7 +17,11 @@ class MissionVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = ViewController.DEFAULT_BACKGROUND
+        if Setting.getUseTheme() == 0 {
+            self.view.backgroundColor = ViewController.DEFAULT_BACKGROUND
+        } else {
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        }
         setupList()
         Oyodo.attention().watch(data: Mission.instance.questMap) { (event: Event<Dictionary<Int, Quest>>) in
             if let map = event.element {

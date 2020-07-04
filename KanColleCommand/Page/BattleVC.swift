@@ -27,7 +27,11 @@ class BattleVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = ViewController.DEFAULT_BACKGROUND
+        if Setting.getUseTheme() == 0 {
+            self.view.backgroundColor = ViewController.DEFAULT_BACKGROUND
+        } else {
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        }
         setupList()
         setupInfoViews()
         watchBattle()
@@ -219,7 +223,7 @@ class BattleVC: UIViewController {
             getText.text = "捞: \(Battle.instance.get)"
             break
         default:
-            nodeText.text = "未出击"
+            nodeText.text = ""
             nextText.text = ""
             headingText.text = ""
             airCommandText.text = ""
